@@ -27,9 +27,10 @@ Admin-routes verwachten een header `Authorization: Bearer <token>`, verkregen vi
   ijsConfiguratie: {
     smaak: String,         // verplicht
     kleur: String,         // verplicht
-    aantalBollen: Number   // verplicht, 1-5
+    aantalBollen: Number,  // verplicht, 1-5
+    grootte: Number        // verplicht, 0.8-1.4
   },
-  totaalprijs: Number,     // verplicht
+  totaalprijs: Number,     // verplicht, wordt server-side herberekend (aantalBollen x €1,75)
   status: String,          // 'te verwerken' | 'verzonden' | 'geannuleerd', default 'te verwerken'
   createdAt, updatedAt     // automatisch via mongoose timestamps
 }
