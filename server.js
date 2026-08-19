@@ -18,4 +18,6 @@ app.get('/', (req, res) => res.send('API draait'));
 app.use('/admin', authRoutes);
 app.use('/orders', orderRoutes);
 
+app.use((req, res) => res.status(404).json({ error: 'Route niet gevonden' }));
+
 app.listen(process.env.PORT || 3000, () => console.log('Server gestart'));
