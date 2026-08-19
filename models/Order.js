@@ -12,7 +12,7 @@ const orderSchema = new mongoose.Schema({
   ijsConfiguratie: {
     smaak: { type: String, required: true },
     kleur: { type: String, required: true },
-    aantalBollen: { type: Number, required: true, min: 1, max: 3 }
+    aantalBollen: { type: Number, required: true, min: 1, max: 5 }
   },
   totaalprijs: {
     type: Number,

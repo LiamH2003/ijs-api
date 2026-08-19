@@ -27,7 +27,7 @@ Admin-routes verwachten een header `Authorization: Bearer <token>`, verkregen vi
   ijsConfiguratie: {
     smaak: String,         // verplicht
     kleur: String,         // verplicht
-    aantalBollen: Number   // verplicht, 1-3
+    aantalBollen: Number   // verplicht, 1-5
   },
   totaalprijs: Number,     // verplicht
   status: String,          // 'te verwerken' | 'verzonden' | 'geannuleerd', default 'te verwerken'
