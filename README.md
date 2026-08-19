@@ -18,6 +18,37 @@ Node.js/Express API voor de Ben & Jerry's ijs-customizer. Verwerkt bestellingen 
 
 Admin-routes verwachten een header `Authorization: Bearer <token>`, verkregen via `/admin/login`.
 
+## Order-model
+
+```js
+{
+  klantnaam: String,       // verplicht
+  adres: String,           // verplicht
+  ijsConfiguratie: {
+    smaak: String,         // verplicht
+    kleur: String,         // verplicht
+    aantalBollen: Number   // verplicht, 1-3
+  },
+  totaalprijs: Number,     // verplicht
+  status: String,          // 'te verwerken' | 'verzonden' | 'geannuleerd', default 'te verwerken'
+  createdAt, updatedAt     // automatisch via mongoose timestamps
+}
+```
+
+## Projectstructuur
+
+```
+├── server.js                      # Express-app, middleware, routes koppelen, DB-connectie
+├── models/Order.js                # Mongoose-schema voor bestellingen
+├── controllers/
+│   ├── orderController.js         # CRUD-logica voor bestellingen
+│   └── authController.js          # Login-logica (credentials checken, JWT signen)
+├── routes/
+│   ├── orders.js                  # /orders routes, beveiligd met requireAuth waar nodig
+│   └── auth.js                    # /admin/login route
+└── middleware/auth.js             # Verifieert JWT uit de Authorization-header
+```
+
 ## Lokaal draaien
 
 ```sh
