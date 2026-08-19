@@ -2,7 +2,7 @@
 
 Node.js/Express API voor de Ben & Jerry's ijs-customizer. Verwerkt bestellingen die via de 3D-configurator geplaatst worden en stelt admin-endpoints beschikbaar om die bestellingen te beheren.
 
-- **Live API:** _TODO: link invullen na deploy op Render_
+- **Live API:** https://ijs-api.onrender.com
 - **Frontend repo:** https://github.com/LiamH2003/ijs-frontend
 
 ## Endpoints
